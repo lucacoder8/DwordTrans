@@ -94,7 +94,7 @@ a {
 
 .hero-content {
     margin-top: 2.5rem;
-    max-width: 640px;
+    max-width: 760px;
 }
 
 .hero-content h1 {
@@ -106,6 +106,13 @@ a {
 .hero-content p {
     margin: 0 0 1.5rem;
     color: #475569;
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
 }
 
 .cta {
@@ -135,18 +142,35 @@ a {
 
 .features,
 .price-grid,
-.faq {
+.faq,
+.post-grid,
+.quick-grid,
+.stat-strip {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
 }
 
 .features article,
-.faq article {
+.faq article,
+.post-grid article,
+.quick-grid article,
+.stat-strip article,
+.article-content,
+.side-card {
     background: #fff;
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.features h3,
+.faq h3,
+.post-grid h3,
+.quick-grid h3,
+.stat-strip h3,
+.side-card h2 {
+    margin-top: 0;
 }
 
 .download-meta {
@@ -156,7 +180,8 @@ a {
     color: #475569;
 }
 
-.download-meta li {
+.download-meta li,
+.side-card li {
     padding: 0.25rem 0;
 }
 
@@ -180,7 +205,8 @@ a {
     margin-top: 0.5rem;
 }
 
-.pricing {
+.pricing,
+.highlight-band {
     background: #fff;
 }
 
@@ -206,15 +232,9 @@ a {
     color: var(--primary);
 }
 
-.price-grid ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.price-grid ul,
+.side-card ul {
     color: #475569;
-}
-
-.price-grid li {
-    padding: 0.3rem 0;
 }
 
 .btn {
@@ -260,6 +280,55 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.post-grid article p,
+.quick-grid article p,
+.stat-strip article span,
+.article-content p,
+.side-card p,
+.side-card li {
+    color: #475569;
+}
+
+.stat-strip strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+.article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(260px, 0.9fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.article-content .lead {
+    margin-top: 0;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.article-sidebar {
+    display: grid;
+    gap: 1rem;
+}
+
+.meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
 .footer {
     padding: 1.5rem;
     text-align: center;
@@ -285,6 +354,12 @@ a {
     }
 }
 
+@media (max-width: 900px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
     .logo-mark {
         width: 54px;
@@ -295,7 +370,13 @@ a {
         justify-content: center;
     }
 
-    .cta {
+    .cta,
+    .btn {
         width: 100%;
+    }
+
+    .blog-header {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }
